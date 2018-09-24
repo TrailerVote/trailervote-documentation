@@ -1,61 +1,54 @@
-const path = require('path');
-const Promise = require('bluebird');
+const path = require('path')
+const Promise = require('bluebird')
 
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const SLUG_SEPARATOR = '___';
+const SLUG_SEPARATOR = '___'
+const SOURCE_SEPERATOR = '/'
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const fileNode = getNode(node.parent);
-    const filePath = createFilePath({ node, getNode });
-
-    const source = fileNode.sourceInstanceName;
-
-    const separatorExists = ~filePath.indexOf(SLUG_SEPARATOR);
-
-    let slug;
-    let prefix;
-
-    if (separatorExists) {
-      const separatorPosition = filePath.indexOf(SLUG_SEPARATOR);
-      const slugBeginning = separatorPosition + SLUG_SEPARATOR.length;
-      slug =
-        separatorPosition === 1
-          ? null
-          : `/${filePath.substring(slugBeginning)}`;
-      prefix = filePath.substring(1, separatorPosition);
-    } else {
-      slug = filePath;
-      prefix = '';
-    }
-
-    if (source !== 'parts') {
-      createNodeField({
-        node,
-        name: `slug`,
-        value: slug,
-      });
-    }
-    createNodeField({
-      node,
-      name: `prefix`,
-      value: prefix,
-    });
-    createNodeField({
-      node,
-      name: `source`,
-      value: source,
-    });
+  if (node.internal.type !== `MarkdownRemark`) {
+    return
   }
-};
+
+  const { createNodeField } = actions
+
+  const fileNode = getNode(node.parent)
+  const filePath = createFilePath({ node, getNode })
+
+  const source = fileNode.sourceInstanceName
+  const [, group, subSource, last] = filePath.split(SOURCE_SEPERATOR)
+  const [slug, prefix] = [last, subSource, group, ''].filter(Boolean)[0].split(SLUG_SEPARATOR).reverse()
+
+  console.log({ filePath, source, group, subSource, last, slug, prefix })
+
+  if (source !== 'parts') {
+    // Partials don't have a slug
+    createNodeField({
+      node,
+      name: `slug`,
+      value: source === 'pages' ? slug : `${source}/${slug}`,
+    })
+  }
+
+  createNodeField({
+    node,
+    name: `prefix`,
+    value: prefix,
+  })
+
+  createNodeField({
+    node,
+    name: `source`,
+    value: source,
+  })
+}
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const pageTemplate = path.resolve('./src/templates/PageTemplate.js');
+    const pageTemplate = path.resolve('./src/templates/PageTemplate.js')
 
     resolve(
       graphql(`
@@ -81,14 +74,16 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       `).then(result => {
+
         if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
+          console.log(result.errors)
+          reject(result.errors)
+          return
         }
 
-        const items = result.data.allMarkdownRemark.edges;
+        const items = result.data.allMarkdownRemark.edges
 
-        const categorySet = new Set();
+        const categorySet = new Set()
 
         // Create category list
         items.forEach(edge => {
@@ -96,19 +91,19 @@ exports.createPages = ({ graphql, actions }) => {
             node: {
               frontmatter: { categories },
             },
-          } = edge;
+          } = edge
 
           if (categories) {
             categories.forEach(category => {
-              categorySet.add(category);
-            });
+              categorySet.add(category)
+            })
           }
-        });
+        })
 
         // create pages
         items.forEach(({ node }) => {
-          const slug = node.fields.slug;
-          const source = node.fields.source;
+          const slug = node.fields.slug
+          const source = node.fields.source
 
           createPage({
             path: slug,
@@ -117,9 +112,9 @@ exports.createPages = ({ graphql, actions }) => {
               slug,
               source,
             },
-          });
-        });
+          })
+        })
       })
-    );
-  });
-};
+    )
+  })
+}

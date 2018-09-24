@@ -1,7 +1,13 @@
 ---
-name: hero
+name: Hero
 ---
 
-It's a series of starters for GatsbyJS: Minimal, Equipped, Themed, Website and Blog. It's 5 in 1!
+*The exhibition industry’s hottest growth tool*.
 
-[more](./content)
+In-theatre trailer analytics and mobile app-remarketing.
+
+[Android SDK](./sdk/android)
+
+[iOS SDK](./sdk/ios)
+
+[Ingestion API](./api/ingestion)

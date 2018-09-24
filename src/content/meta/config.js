@@ -1,25 +1,25 @@
 const base = {
-  name: 'Gatsby Starter Kit',
-  url: 'https://github.com/greglobinski/gatsby-starter-kit'
-};
+  name: 'TrailerVote Docs',
+  url: 'https://github.com/TrailerVote'
+}
 
 const config = {
   /* meta tags */
-  siteTitle: `${base.name} - a series of GatsbyJS starters`,
+  siteTitle: `${base.name} - API and SDK documentation`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${
     base.name
-  } is a series starters: Minimal, Equipped, Themed, Website, Blog.`,
+  } - API and SDK documentation`,
   siteImage: 'preview.jpg',
   siteLanguage: 'en',
 
   /* site header */
   headerTitle: `${base.name}`,
-  headerSubTitle: 'a series of starters for GatsbyJS',
+  headerSubTitle: 'API and SDK documentation',
 
   /* url */
   siteUrl: base.url
   // pathPrefix: '',
-};
+}
 
-module.exports = config;
+module.exports = config

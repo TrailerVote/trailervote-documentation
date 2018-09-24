@@ -5241,6 +5241,10 @@ gatsby-source-filesystem@2.0.1:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
+gatsby-source-instance-name-for-remark@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-instance-name-for-remark/-/gatsby-source-instance-name-for-remark-0.1.1.tgz#8c871d5c2980c01e794445128fa5c702f194da2b"
+
 gatsby-transformer-remark@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.1.1.tgz#7f6a26a87ba797664a70630b1d3a93d7814ce565"

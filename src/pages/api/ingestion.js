@@ -1,31 +1,31 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import '@react-website-themes/classy-docs/styles/variables';
-import '@react-website-themes/classy-docs/styles/global';
+import '@react-website-themes/classy-docs/styles/variables'
+import '@react-website-themes/classy-docs/styles/global'
 
-import Article from '@react-website-themes/classy-docs/components/Article';
-import Branding from '@react-website-themes/classy-docs/components/Branding';
-import Footer from '@react-website-themes/classy-docs/components/Footer';
-import Header from '@react-website-themes/classy-docs/components/Header';
-import Heading from '@react-website-themes/classy-docs/components/Heading';
-import Layout from '@react-website-themes/classy-docs/components/Layout';
-import List from '@react-website-themes/classy-docs/components/List';
-import Menu from '@react-website-themes/classy-docs/components/Menu';
-import Seo from '@react-website-themes/classy-docs/components/Seo';
+import Article from '@react-website-themes/classy-docs/components/Article'
+import Branding from '@react-website-themes/classy-docs/components/Branding'
+import Footer from '../../components/Footer'
+import Header from '@react-website-themes/classy-docs/components/Header'
+import Heading from '@react-website-themes/classy-docs/components/Heading'
+import Layout from '@react-website-themes/classy-docs/components/Layout'
+import List from '@react-website-themes/classy-docs/components/List'
+import Menu from '@react-website-themes/classy-docs/components/Menu'
+import Seo from '@react-website-themes/classy-docs/components/Seo'
 
-import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
-import categoryList from 'content/meta/categories';
+import config from 'content/meta/config'
+import menuItems from 'content/meta/menu'
+import categoryList from 'content/meta/categories'
 
 const ContentPage = props => {
   const {
     data: {
       pages: { edges: rawPages },
       footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML },
+      copyright: { html: copyrightHTML }
     },
-  } = props;
+  } = props
 
   const {
     headerTitle,
@@ -34,9 +34,9 @@ const ContentPage = props => {
     siteTitle,
     siteDescription,
     siteLanguage,
-  } = config;
+  } = config
 
-  const pages = rawPages.map(page => page.node);
+  const pages = rawPages.map(page => page.node)
 
   return (
     <Layout>
@@ -45,7 +45,7 @@ const ContentPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="Table of content" />
+        <Heading title="Table of contents" />
         <List pages={pages} categoryList={categoryList} />
       </Article>
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
@@ -56,15 +56,15 @@ const ContentPage = props => {
         description={siteDescription}
       />
     </Layout>
-  );
-};
+  )
+}
 
-export default ContentPage;
+export default ContentPage
 
 export const query = graphql`
   query {
     pages: allMarkdownRemark(
-      filter: { fields: { source: { eq: "docs" } } }
+      filter: { fields: { source: { eq: "api/ingestion" } } }
       sort: { fields: [fields___prefix] }
     ) {
       edges {
@@ -75,7 +75,6 @@ export const query = graphql`
           }
           frontmatter {
             title
-            shortTitle
             categories
           }
         }
@@ -95,4 +94,4 @@ export const query = graphql`
       html
     }
   }
-`;
+`

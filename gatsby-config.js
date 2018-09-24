@@ -1,5 +1,5 @@
-require('dotenv').config();
-const config = require('./src/content/meta/config');
+require('dotenv').config()
+const config = require('./src/content/meta/config')
 
 module.exports = {
   siteMetadata: {
@@ -31,8 +31,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `docs`,
-        path: `${__dirname}/src/content/docs/`,
+        name: `api/ingestion`,
+        path: `${__dirname}/src/content/docs/api/ingestion`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sdk/android`,
+        path: `${__dirname}/src/content/docs/sdk/android`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sdk/ios`,
+        path: `${__dirname}/src/content/docs/sdk/ios`,
       },
     },
     `gatsby-transformer-remark`,
@@ -88,4 +102,4 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sitemap`,
   ],
-};
+}
