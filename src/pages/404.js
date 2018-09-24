@@ -1,21 +1,21 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import '@react-website-themes/classy-docs/styles/variables';
-import '@react-website-themes/classy-docs/styles/global';
+import '@react-website-themes/classy-docs/styles/variables'
+import '@react-website-themes/classy-docs/styles/global'
 
-import Article from '@react-website-themes/classy-docs/components/Article';
-import Bodytext from '@react-website-themes/classy-docs/components/Bodytext';
-import Branding from '@react-website-themes/classy-docs/components/Branding';
-import Footer from '@react-website-themes/classy-docs/components/Footer';
-import Header from '@react-website-themes/classy-docs/components/Header';
-import Heading from '@react-website-themes/classy-docs/components/Heading';
-import Layout from '@react-website-themes/classy-docs/components/Layout';
-import Menu from '@react-website-themes/classy-docs/components/Menu';
-import Seo from '@react-website-themes/classy-docs/components/Seo';
+import Article from '@react-website-themes/classy-docs/components/Article'
+import Bodytext from '@react-website-themes/classy-docs/components/Bodytext'
+import Branding from '@react-website-themes/classy-docs/components/Branding'
+import Footer from '../components/Footer'
+import Header from '@react-website-themes/classy-docs/components/Header'
+import Heading from '@react-website-themes/classy-docs/components/Heading'
+import Layout from '@react-website-themes/classy-docs/components/Layout'
+import Menu from '@react-website-themes/classy-docs/components/Menu'
+import Seo from '@react-website-themes/classy-docs/components/Seo'
 
-import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
+import config from 'content/meta/config'
+import menuItems from 'content/meta/menu'
 
 const NotFoundPage = props => {
   const {
@@ -24,7 +24,7 @@ const NotFoundPage = props => {
       footerLinks: { html: footerLinksHTML },
       copyright: { html: copyrightHTML },
     },
-  } = props;
+  } = props
 
   const {
     headerTitle,
@@ -33,7 +33,7 @@ const NotFoundPage = props => {
     siteTitle,
     siteDescription,
     siteLanguage,
-  } = config;
+  } = config
 
   return (
     <Layout>
@@ -53,10 +53,10 @@ const NotFoundPage = props => {
         description={siteDescription}
       />
     </Layout>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage
 
 export const query = graphql`
   query {
@@ -76,4 +76,4 @@ export const query = graphql`
       html
     }
   }
-`;
+`
