@@ -1,29 +1,29 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import '@react-website-themes/classy-docs/styles/variables'
 import '@react-website-themes/classy-docs/styles/global'
 
 import Article from '@react-website-themes/classy-docs/components/Article'
 import Branding from '@react-website-themes/classy-docs/components/Branding'
-import Footer from '../../components/Footer'
+import Footer from '../components/Footer'
 import Header from '@react-website-themes/classy-docs/components/Header'
 import Heading from '@react-website-themes/classy-docs/components/Heading'
 import Layout from '@react-website-themes/classy-docs/components/Layout'
-import List from '@react-website-themes/classy-docs/components/List'
+import List from '../components/ArticleList'
 import Menu from '@react-website-themes/classy-docs/components/Menu'
 import Seo from '@react-website-themes/classy-docs/components/Seo'
 
 import config from 'content/meta/config'
 import menuItems from 'content/meta/menu'
-import categoryList from 'content/meta/categories'
+import categories from 'content/meta/categories'
 
 const ContentPage = props => {
   const {
     data: {
       pages: { edges: rawPages },
       footerLinks: { html: footerLinksHTML },
-      copyright: { html: copyrightHTML }
+      copyright: { html: copyrightHTML },
+      intro
     },
   } = props
 
@@ -37,6 +37,7 @@ const ContentPage = props => {
   } = config
 
   const pages = rawPages.map(page => page.node)
+  const introHTML = (intro || {}).html
 
   return (
     <Layout>
@@ -46,7 +47,8 @@ const ContentPage = props => {
       </Header>
       <Article>
         <Heading title="Table of contents" />
-        <List pages={pages} categoryList={categoryList} />
+        { introHTML && <div className={""} dangerouslySetInnerHTML={{ __html: introHTML }} /> }
+        <List pages={pages} categoryList={categories} />
       </Article>
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo
@@ -61,37 +63,3 @@ const ContentPage = props => {
 
 export default ContentPage
 
-export const query = graphql`
-  query {
-    pages: allMarkdownRemark(
-      filter: { fields: { source: { eq: "api/ingestion" } } }
-      sort: { fields: [fields___prefix] }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            categories
-          }
-        }
-      }
-    }
-    hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero/" }) {
-      html
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
-    }
-  }
-`

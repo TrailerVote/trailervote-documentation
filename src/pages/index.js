@@ -6,8 +6,8 @@ import '@react-website-themes/classy-docs/styles/global'
 
 import Branding from '@react-website-themes/classy-docs/components/Branding'
 import Header from '@react-website-themes/classy-docs/components/Header'
-import Hero from '@react-website-themes/classy-docs/components/Hero'
 import Layout from '@react-website-themes/classy-docs/components/Layout'
+import Hero from '../components/Hero'
 import Menu from '@react-website-themes/classy-docs/components/Menu'
 import Seo from '@react-website-themes/classy-docs/components/Seo'
 
@@ -17,7 +17,8 @@ import menuItems from 'content/meta/menu'
 const IndexPage = props => {
   const {
     data: {
-      hero: { html: heroHTML }
+      hero: { html: heroHTML },
+      heroNavigation: { html: heroNavigationHTML }
     },
   } = props
 
@@ -37,7 +38,9 @@ const IndexPage = props => {
         <Menu items={menuItems} />
       </Header>
       <Hero>
-        <div dangerouslySetInnerHTML={{ __html: heroHTML }} />
+        <Hero.Logo />
+        <Hero.Html>{heroHTML}</Hero.Html>
+        <Hero.Navigation>{heroNavigationHTML}</Hero.Navigation>
       </Hero>
       <Seo
         url={siteUrl}
@@ -54,6 +57,9 @@ export default IndexPage
 export const query = graphql`
   query {
     hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero/" }) {
+      html
+    }
+    heroNavigation: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero.navigation/" }) {
       html
     }
     footerLinks: markdownRemark(

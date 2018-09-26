@@ -31,8 +31,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `api/ingestion`,
-        path: `${__dirname}/src/content/docs/api/ingestion`,
+        name: `reference`,
+        path: `${__dirname}/src/content/docs/reference`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `api`,
+        path: `${__dirname}/src/content/docs/api`,
       },
     },
     {

@@ -1,12 +1,12 @@
 import { graphql } from 'gatsby'
-import ContentPage from '../../components/ContentPage'
+import ContentPage from '../components/ContentPage'
 
 export default ContentPage
 
 export const query = graphql`
   query {
     pages: allMarkdownRemark(
-      filter: { fields: { source: { eq: "sdk/ios" } } }
+      filter: { fields: { source: { eq: "api" } } }
       sort: { fields: [fields___prefix] }
     ) {
       edges {

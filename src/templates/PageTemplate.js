@@ -20,7 +20,7 @@ import layoutSidebar from '@react-website-themes/classy-docs/styles/layoutSideba
 
 import config from 'content/meta/config'
 import menuItems from 'content/meta/menu'
-import categoryList from 'content/meta/categories'
+import categories from 'content/meta/categories'
 
 const PageTemplate = props => {
   const {
@@ -55,7 +55,7 @@ const PageTemplate = props => {
         <Sidebar
           title="Table of contents"
           pages={pages}
-          categoryList={categoryList}
+          categoryList={categories}
           pathname={slug}
         />
       )}

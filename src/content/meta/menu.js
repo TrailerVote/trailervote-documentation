@@ -1,6 +1,8 @@
 const menu = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' }
-];
+  { label: 'Android SDK', to: '/sdk/android' },
+  { label: 'iOS SDK', to: '/sdk/ios' },
+  { label: 'API Reference', to: '/reference' },
+]
 
 export default menu
