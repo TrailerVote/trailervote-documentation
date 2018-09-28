@@ -45,4 +45,4 @@ When a collection view cell is tapped, a fullscreen video player is presented au
 
 The video player provides an ability to seek through the trailers in the feed using the convenient controls. The video player also presents the user with a voting view, so that the user can rate the movie that is currently playing.
 
-Upon voted, the trailer will be automatically added to the voted trailers feed (see <a href="voted-trailers-feed-integration.html">Voted trailers feed integration</a> on how to set up the feed).
+Upon voted, the trailer will be automatically added to the voted trailers feed (see [Voted trailers feed integration](voted_trailers_feed_integration) on how to set up the feed).

@@ -25,6 +25,6 @@ When a trailer is recognized, the voting buttons are presented automatically, gi
 
 <img src="img_recognition_screen_voting.jpg" width=250/>
 
-After voting, the trailer is automatically added to the voted trailers feed (See <a href="voted-trailers-feed-integration.html">Voted trailers feed integration</a> for the details).
+After voting, the trailer is automatically added to the voted trailers feed (See [Voted trailers feed integration](voted_trailers_feed_integration) for the details).
 
 Special advertisement clips are handled differently - the fullscreen web view is presented with the corresponding url being loaded.
