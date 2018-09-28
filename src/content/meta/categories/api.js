@@ -1,9 +1,9 @@
-import SettingsIcon from 'react-feather/dist/icons/settings'
-import CodeIcon from 'react-feather/dist/icons/code'
+import BookIcon from 'react-feather/dist/icons/book-open'
+import ImageIcon from 'react-feather/dist/icons/image'
 
 export const categories = [
-  { name: 'media-types', label: 'Media Types', icon: SettingsIcon },
-  { name: 'response codes', label: 'Response Codes', icon: CodeIcon }
+  { name: 'guides', label: 'Guides', icon: BookIcon },
+  { name: 'media-type', label: 'Media Types', icon: ImageIcon },
 ]
 
 export default categories

@@ -3,14 +3,10 @@ import React from 'react'
 import '@react-website-themes/classy-docs/styles/variables'
 import '@react-website-themes/classy-docs/styles/global'
 
-import Article from '@react-website-themes/classy-docs/components/Article'
-import Branding from '@react-website-themes/classy-docs/components/Branding'
+import TopBar from '../components/TopBar'
+import Article from '../components/Article'
 import Footer from '../components/Footer'
-import Header from '@react-website-themes/classy-docs/components/Header'
-import Heading from '@react-website-themes/classy-docs/components/Heading'
 import Layout from '@react-website-themes/classy-docs/components/Layout'
-import List from '../components/ArticleList'
-import Menu from '@react-website-themes/classy-docs/components/Menu'
 import Seo from '@react-website-themes/classy-docs/components/Seo'
 
 import config from 'content/meta/config'
@@ -41,14 +37,14 @@ const ContentPage = props => {
 
   return (
     <Layout>
-      <Header>
-        <Branding title={headerTitle} subTitle={headerSubTitle} />
-        <Menu items={menuItems} />
-      </Header>
+      <TopBar>
+        <TopBar.Branding title={headerTitle} subTitle={headerSubTitle} />
+        <TopBar.Links items={menuItems} />
+      </TopBar>
       <Article>
-        <Heading title="Table of contents" />
-        { introHTML && <div className={""} dangerouslySetInnerHTML={{ __html: introHTML }} /> }
-        <List pages={pages} categoryList={categories} />
+        { introHTML && <Article.Body html={introHTML} /> }
+        <Article.Heading title="Table of contents" />
+        <Article.Related pages={pages} categories={categories} />
       </Article>
       <Footer links={footerLinksHTML} copyright={copyrightHTML} />
       <Seo
