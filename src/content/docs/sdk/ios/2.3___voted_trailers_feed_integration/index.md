@@ -1,8 +1,13 @@
+---
+title: Voted trailers feed integration
+categories: ['sdk', 'ios', 'configuration']
+---
+
 # Voted trailers feed integration
 
 `TVVotedTrailersFeedViewController` is a class responsible for fetching and displaying the voted trailers feed which contains trailers the user has previously rated. SDK provides a simple and convenient way for embedding the feed into your app's UI.
 
-<img src="img/img_voted_trailers_feed.jpg" width=400/>
+<img src="img_voted_trailers_feed.jpg" width=400/>
 
 Instantiate the view controller by calling the `-[TVTrailerVoteFactory votedTrailersFeedViewControllerEmbeddedInParentViewController:parentView:]` method of the main factory class:
 
@@ -17,7 +22,7 @@ let votedTrailersFeedVC = TVTrailerVoteFactory.shared().votedTrailersFeedViewCon
 
 When using storyboards, you can simply create a `UIView` wrapper, create an `IBOutlet` for it and instantiate the voted trailers feed view controller in your `viewDidLoad` method:
 
-<img src="img/img_voted_trailers_feed_container.jpg" width=400/>
+<img src="img_voted_trailers_feed_container.jpg" width=400/>
 
 ```
 @IBOutlet weak var votedTrailersFeedContainerView: UIView!
@@ -38,4 +43,4 @@ At the top of the feed there's a header view that allows the user to filter prev
 
 When a trailer cell is tapped, a fullscreen video player is presented automatically:
 
-<img src="img/img_video_player.jpg" width=400/>
+<img src="img_video_player.jpg" width=400/>
