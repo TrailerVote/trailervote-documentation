@@ -1,6 +1,6 @@
 ---
 title: Trailer recognition screen integration
-categories: ['sdk', 'ios', 'configuration']
+categories: ['sdk', 'ios', 'implementation']
 ---
 
 # Trailer recognition screen integration

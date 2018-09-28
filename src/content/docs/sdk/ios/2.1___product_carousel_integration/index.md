@@ -1,6 +1,6 @@
 ---
 title: Product carousel integration
-categories: ['sdk', 'ios', 'configuration']
+categories: ['sdk', 'ios', 'implementation']
 ---
 
 # Product carousel feed integration

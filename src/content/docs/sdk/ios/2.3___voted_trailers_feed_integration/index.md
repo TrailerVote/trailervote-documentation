@@ -1,6 +1,6 @@
 ---
 title: Voted trailers feed integration
-categories: ['sdk', 'ios', 'configuration']
+categories: ['sdk', 'ios', 'implementation']
 ---
 
 # Voted trailers feed integration
