@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TVAudioRecognitionViewControllerDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/TVAudioRecognitionViewControllerDelegate" class="dashAnchor"></a>
+    <a title="TVAudioRecognitionViewControllerDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TrailerVoteSDK Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TrailerVoteSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TVAudioRecognitionViewControllerDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../product-carousel-integration.html">Product carousel integration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../trailer-recognition-screen-integration.html">Trailer recognition screen integration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../voted-trailers-feed-integration.html">Voted trailers feed integration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TVProductCarouselViewController.html">TVProductCarouselViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TVTrailerVoteFactory.html">TVTrailerVoteFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TVVotedTrailersFeedViewController.html">TVVotedTrailersFeedViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TVAudioRecognitionViewControllerDelegate.html">TVAudioRecognitionViewControllerDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TVAudioRecognitionViewControllerDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">TVAudioRecognitionViewControllerDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Delegate protocol for <code><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></code>. Includes methods for notifying the client about occured events during it&rsquo;s lifecycle.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)TVAudioRecognitionViewControllerDelegate(im)audioRecognitionViewController:userDidTapOnFacebookLoginButtonWithSubscriptionEnabled:hostViewController:"></a>
+                    <a name="//apple_ref/objc/Method/-audioRecognitionViewController:userDidTapOnFacebookLoginButtonWithSubscriptionEnabled:hostViewController:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)TVAudioRecognitionViewControllerDelegate(im)audioRecognitionViewController:userDidTapOnFacebookLoginButtonWithSubscriptionEnabled:hostViewController:">-audioRecognitionViewController:userDidTapOnFacebookLoginButtonWithSubscriptionEnabled:hostViewController:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the user taps on <code>Facebook Login</code> button after being presented with partnership program description screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">audioRecognitionViewController</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">viewController</span>
+    <span class="nf">userDidTapOnFacebookLoginButtonWithSubscriptionEnabled</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">subscriptionEnabled</span>
+                                        <span class="nf">hostViewController</span><span class="p">:</span>
+                                            <span class="p">(</span><span class="n">nonnull</span> <span class="n">__kindof</span> <span class="n">UIViewController</span>
+                                                 <span class="o">*</span><span class="p">)</span><span class="n">hostViewController</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">audioRecognitionViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></span><span class="p">,</span> <span class="n">userDidTapOnFacebookLoginButtonWithSubscriptionEnabled</span> <span class="nv">subscriptionEnabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">hostViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></code> that called this method.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>subscriptionEnabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether or not the user has checked the <code>Subscribe</code> checkbox.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hostViewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>View controller to use for presenting another view controllers on the client side, such as FB SDK Login WebView etc.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)TVAudioRecognitionViewControllerDelegate(im)audioRecognitionViewController:userDidTapOnTwitterLoginButtonWithSubscriptionEnabled:hostViewController:"></a>
+                    <a name="//apple_ref/objc/Method/-audioRecognitionViewController:userDidTapOnTwitterLoginButtonWithSubscriptionEnabled:hostViewController:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)TVAudioRecognitionViewControllerDelegate(im)audioRecognitionViewController:userDidTapOnTwitterLoginButtonWithSubscriptionEnabled:hostViewController:">-audioRecognitionViewController:userDidTapOnTwitterLoginButtonWithSubscriptionEnabled:hostViewController:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the user taps on <code>Twitter Login</code> button after being presented with partnership program description screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">audioRecognitionViewController</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">viewController</span>
+    <span class="nf">userDidTapOnTwitterLoginButtonWithSubscriptionEnabled</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">subscriptionEnabled</span>
+                                       <span class="nf">hostViewController</span><span class="p">:</span>
+                                           <span class="p">(</span><span class="n">nonnull</span> <span class="n">__kindof</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span>
+                                               <span class="n">hostViewController</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">audioRecognitionViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></span><span class="p">,</span> <span class="n">userDidTapOnTwitterLoginButtonWithSubscriptionEnabled</span> <span class="nv">subscriptionEnabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">hostViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a></code> that called this method.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>subscriptionEnabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether or not the user has checked the <code>Subscribe</code> checkbox.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hostViewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>View controller to use for presenting another view controllers on the client side, such as FB SDK Login WebView etc.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">TrailerVote</a>. All rights reserved. (Last updated: 2018-09-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

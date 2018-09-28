@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Voted trailers feed integration  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Voted trailers feed integration  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">TrailerVoteSDK Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">TrailerVoteSDK Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Voted trailers feed integration  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="product-carousel-integration.html">Product carousel integration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="trailer-recognition-screen-integration.html">Trailer recognition screen integration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="voted-trailers-feed-integration.html">Voted trailers feed integration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/TVAudioRecognitionViewController.html">TVAudioRecognitionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TVProductCarouselViewController.html">TVProductCarouselViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TVTrailerVoteFactory.html">TVTrailerVoteFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TVVotedTrailersFeedViewController.html">TVVotedTrailersFeedViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/TVAudioRecognitionViewControllerDelegate.html">TVAudioRecognitionViewControllerDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='voted-trailers-feed-integration' class='heading'>Voted trailers feed integration</h1>
+
+<p><code><a href="Classes/TVVotedTrailersFeedViewController.html">TVVotedTrailersFeedViewController</a></code> is a class responsible for fetching and displaying the voted trailers feed which contains trailers the user has previously rated. SDK provides a simple and convenient way for embedding the feed into your app&rsquo;s UI.</p>
+
+<p><img src="img/img_voted_trailers_feed.jpg" width=400/></p>
+
+<p>Instantiate the view controller by calling the <code><a href="Classes/TVTrailerVoteFactory.html#/c:objc(cs)TVTrailerVoteFactory(im)votedTrailersFeedViewControllerEmbeddedInParentViewController:parentView:">-[TVTrailerVoteFactory votedTrailersFeedViewControllerEmbeddedInParentViewController:parentView:]</a></code> method of the main factory class:</p>
+<pre class="highlight plaintext"><code>let votedTrailersFeedVC = TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(
+    inParentViewController: self,
+    parentView: votedTrailersFeedContainerView
+)
+</code></pre>
+
+<p><code>parentViewController</code> is a <code>UIViewController</code> instance that will be used as a parent for the voted trailers feed view controller, <code>parentView</code> is a <code>UIView</code> that you wish to embed the feed content into. The voted trailers feed view controller will automatically set all neccessary constraints so you only need to layout your container view:</p>
+
+<p>When using storyboards, you can simply create a <code>UIView</code> wrapper, create an <code>IBOutlet</code> for it and instantiate the voted trailers feed view controller in your <code>viewDidLoad</code> method:</p>
+
+<p><img src="img/img_voted_trailers_feed_container.jpg" width=400/></p>
+<pre class="highlight plaintext"><code>@IBOutlet weak var votedTrailersFeedContainerView: UIView!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    let votedTrailersFeedVC = TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(
+        inParentViewController: self,
+        parentView: votedTrailersFeedContainerView
+    )
+}
+</code></pre>
+
+<p>When instantiated, the voted trailers feed view controller will automatically fetch and display the feed. To force a feed reload, call the <code><a href="Classes/TVVotedTrailersFeedViewController.html#/c:objc(cs)TVVotedTrailersFeedViewController(im)reloadFeed">-[TVVotedTrailersFeedViewController reloadFeed]</a></code> method.</p>
+
+<p>At the top of the feed there&rsquo;s a header view that allows the user to filter previosly rated trailers by the type of vote (<code>All</code>, <code>Yes</code>, <code>No</code> or <code>Maybe</code>):</p>
+
+<p>When a trailer cell is tapped, a fullscreen video player is presented automatically:</p>
+
+<p><img src="img/img_video_player.jpg" width=400/></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">TrailerVote</a>. All rights reserved. (Last updated: 2018-09-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
