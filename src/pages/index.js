@@ -14,7 +14,7 @@ import Seo from '@react-website-themes/classy-docs/components/Seo'
 import config from 'content/meta/config'
 import menuItems from 'content/meta/menu'
 
-const IndexPage = props => {
+export default function IndexPage(props) {
   const {
     data: {
       hero: { html: heroHTML },
@@ -52,11 +52,9 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
-
 export const query = graphql`
   query {
-    hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero/" }) {
+    hero: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero.body/" }) {
       html
     }
     heroNavigation: markdownRemark(fileAbsolutePath: { regex: "/content/parts/hero.navigation/" }) {

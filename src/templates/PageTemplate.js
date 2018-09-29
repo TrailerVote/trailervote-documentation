@@ -2,9 +2,9 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import 'prismjs/themes/prism-okaidia.css'
 import '@react-website-themes/classy-docs/styles/variables'
 import '@react-website-themes/classy-docs/styles/global'
+import '../prism'
 
 import TopBar from '../components/TopBar'
 import Article from '../components/Article'

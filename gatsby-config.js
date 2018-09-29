@@ -79,7 +79,6 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -97,6 +96,10 @@ module.exports = {
               },
             },
           },
+          `gatsby-plugin-emotion`,
+          {
+            resolve: `gatsby-remark-prismjs`
+          },
         ],
       },
     },
@@ -106,7 +109,6 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`
   ],
 }

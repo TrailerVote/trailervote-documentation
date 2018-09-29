@@ -90,6 +90,7 @@ export default css`
     padding: 20px 20px 20px 30px;
     border-left: 5px solid #ddd;
     font-style: italic;
+    margin: 0 0 1.5em;
 
     & p:last-child {
       margin-bottom: 0;

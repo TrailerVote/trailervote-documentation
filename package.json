@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-kit",
-  "description": "A set of starters for Gatsby.js v.2",
+  "name": "trailervote-documentation",
+  "description": "TrailerVote Documentation",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "clean": "rimraf public",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src"
@@ -60,6 +61,7 @@
     "js-yaml": "^3.12.0",
     "prettier": "^1.13.7",
     "react-testing-library": "^5.0.1",
+    "rimraf": "^2.6.2",
     "yaml-loader": "^0.5.0"
   }
 }
