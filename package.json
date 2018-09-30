@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
+    "prebuild": "yarn clean",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "rimraf public",
+    "clean": "rimraf public && rimraf .cache",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src"
