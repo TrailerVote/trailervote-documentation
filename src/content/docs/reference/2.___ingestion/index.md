@@ -14,6 +14,8 @@ The preferred method of ingestion is exposing an API on your end, giving us the 
 - The sources for audio fragments such as videos (trailers),
 - Optionally a list of places and which products should be tied to which places.
 
+In this case, you are done reading, as the rest of this guide is intended for implementing ingestion yourself.
+
 ## API client packages
 
 If you want to write the ingestion yourself, we recommend you to use one of our packages in order to communicate with the TrailerVote services, as these packages inject the correct [media types](media-types), [authentication](authentication), [headers](request-and-response-headers) and data, as well as giving you a normalised way of handling [exceptions](media-type-errors) and other [errors](media-type-errors).
