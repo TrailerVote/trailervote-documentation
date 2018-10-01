@@ -3,7 +3,7 @@
 ## Installation
 If you don't have Gatsby yet
 ```
-yarn global install gatsby-cli
+yarn global add gatsby-cli
 ```
 
 Install the dependencies
