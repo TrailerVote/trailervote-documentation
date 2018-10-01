@@ -3,7 +3,7 @@ title: Ingestion guide
 categories: ['reference', 'api', 'guides', 'ingestion']
 ---
 
-In order to get your products, such as movies, into our system, and link them up with places, such as cinemas, images and videos, such as trailers, we need to ingest all that data.
+In order to get your products (e.g. movies) into our system and link them up with places (e.g. cinemas), images (e.g. posters), and videos (e.g. trailers), we need to ingest all that data.
 
 ## Preferred method
 
