@@ -1,6 +1,8 @@
 ---
 title: Ingestion guide
 categories: ['reference', 'api', 'guides', 'ingestion']
+prev: '/reference/authentication'
+next: '/reference/ingest-products'
 ---
 
 In order to get your products (e.g. movies) into our system and link them up with places (e.g. cinemas), images (e.g. posters), and videos (e.g. trailers), we need to ingest all that data.
@@ -31,10 +33,4 @@ Please contact us if you use a different language and/or framework, along with t
 
 ## REST API
 
-If your language is not _yet_ available, but you would like to ingest data into our system, you can use the REST API. It is important to understand our [API design considerations](/api/reference), [headers](request-and-response-headers) and [media types](media-types). The `Allow`(request-and-response-headers#allow) can always be used to determine which REST methods are allowed on a certain endpoint.
-
-## Guide
-
-1. [Ingest products](ingest-products)
-2. [Ingest assets](ingest-assets)
-3. [Link places](ingest-link-locations)
+If your language is not _yet_ available, but you would like to ingest data into our system, you can use the REST API. It is important to understand our [API design considerations](/api/reference), [headers](request-and-response-headers) and [media types](media-types). The [`Allow`](request-and-response-headers#allow) can always be used to determine which REST methods are allowed on a certain endpoint.

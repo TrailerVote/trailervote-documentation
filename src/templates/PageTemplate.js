@@ -25,7 +25,7 @@ const PageTemplate = props => {
       page: {
         html: pageHTML,
         frontmatter: { title },
-        fields: { slug, source },
+        fields: { slug, source, next, prev },
         excerpt,
       },
       pages: { edges: nodePages },
@@ -63,6 +63,7 @@ const PageTemplate = props => {
         <Article>
           <Article.Heading title={title} />
           <Article.Body html={pageHTML} />
+          <Article.Navigation next={next} prev={prev} />
         </Article>
         <Footer links={footerLinksHTML} copyright={copyrightHTML} />
         <Seo
@@ -93,6 +94,8 @@ export const query = graphql`
         slug
         prefix
         source
+        next
+        prev
       }
       frontmatter {
         title

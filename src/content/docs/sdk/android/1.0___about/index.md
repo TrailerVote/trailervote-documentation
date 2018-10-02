@@ -29,7 +29,7 @@ TrailerVote SDK for Android requires:
 2. Copy `com` directory into your project libraries directory. Example, `YourAppDir/app/libs/`.
 <img src="img_sdk_location.png" width="300" alt="SDK location" />
 3. In you project `gradle` file add libraries directory to repositories list.
-```gradle
+```groovy
 allprojects {
     repositories {
         maven {
@@ -39,7 +39,7 @@ allprojects {
 }
 ```
 4. In your app module `gradle` file add TrailerVote SDK dependency:
-```gradle
+```groovy
 dependencies {
     implementation "com.trailervote:trailervotesdk:1.0.0@aar"
 }

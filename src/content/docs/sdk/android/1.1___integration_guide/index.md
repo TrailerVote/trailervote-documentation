@@ -5,7 +5,7 @@ categories: ['sdk', 'android', 'implementation']
 
 ## Basic Integration
 
-The TrailerVote SDK contains a main class (`TrailerVoteSdk`) which contains all the methods necessary for adding the TrailerVote experience to your app.
+The TrailerVote SDK contains a main class ([`TrailerVoteSdk`](/android)) which contains all the methods necessary for adding the TrailerVote experience to your app.
 
 1. Configuring and initializing the **TrailerVote SDK**
 2. Enabling the **TrailerVote In-Theatre feature**
@@ -17,7 +17,7 @@ The TrailerVote SDK contains a main class (`TrailerVoteSdk`) which contains all 
 
 The initialization process of the SDK begins immediately at the first call of `TrailerVoteSdk.init(Context)`. All internal dependencies are initialized as well as public singleton instances.
 
-To start the pre-loading process of the data needed by the SDK, call the 
+To start the pre-loading process of the data needed by the SDK, call the
 
 ```java
 TrailerVoteSdk.startPreLoading();
@@ -62,7 +62,7 @@ boolean hasVoted = TrailerVoteSdk.hasVotedOnMovieWithId(someMovieId);
 
 <img src="img_player_screen.png" width="300" />
 
-Because moviegoers watch trailers in your movie app, we recommend replacing your video player with the **TrailerVote Video Player**. The TrailerVote Video Player will provide a prompt during the video playback. 
+Because moviegoers watch trailers in your movie app, we recommend replacing your video player with the **TrailerVote Video Player**. The TrailerVote Video Player will provide a prompt during the video playback.
 
 To launch the video player, call the
 
@@ -76,7 +76,7 @@ Given an array of movie ids, the video player will automatically manage the play
 
 There are 3 important events that need to be instrumented.
 
-When a user organically opens a movie that has been bookmarked, the SDK needs to be notified via  
+When a user organically opens a movie that has been bookmarked, the SDK needs to be notified via
 
 ```java
 TrailerVoteSdk.submitBookmarkedMovieOpenedWithId(movieID);

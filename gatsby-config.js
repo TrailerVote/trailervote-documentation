@@ -56,7 +56,6 @@ module.exports = {
         path: `${__dirname}/src/content/docs/sdk/ios`,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sharp`,
@@ -103,12 +102,12 @@ module.exports = {
         ],
       },
     },
-    {
+    /* {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
-    },
-    `gatsby-plugin-sitemap`
+    },*/
+    // `gatsby-plugin-sitemap`
   ],
 }

@@ -20,8 +20,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const [, group, subSource, last] = filePath.split(SOURCE_SEPERATOR)
   const [slug, prefix] = [last, subSource, group, ''].filter(Boolean)[0].split(SLUG_SEPARATOR).reverse()
 
-  console.log({ filePath, source, group, subSource, last, slug, prefix })
-
   if (source !== 'parts') {
     // Partials don't have a slug
     createNodeField({
@@ -31,17 +29,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 
-  createNodeField({
-    node,
-    name: `prefix`,
-    value: prefix,
-  })
+  const { next, prev } = node.frontmatter
+  const fields = { prefix, source, next, prev }
 
-  createNodeField({
-    node,
-    name: `source`,
-    value: source,
-  })
+  for (let field in fields) {
+    createNodeField({
+      node,
+      name: field,
+      value: fields[field],
+    })
+  }
 }
 
 exports.createPages = ({ graphql, actions }) => {
@@ -68,6 +65,8 @@ exports.createPages = ({ graphql, actions }) => {
                 frontmatter {
                   title
                   categories
+                  next
+                  prev
                 }
               }
             }
@@ -102,16 +101,15 @@ exports.createPages = ({ graphql, actions }) => {
 
         // create pages
         items.forEach(({ node }) => {
-          const slug = node.fields.slug
-          const source = node.fields.source
+          const { slug, source } = node.fields
 
           createPage({
             path: slug,
             component: pageTemplate,
             context: {
               slug,
-              source,
-            },
+              source
+            }
           })
         })
       })
