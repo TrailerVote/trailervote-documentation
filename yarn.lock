@@ -4263,14 +4263,14 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom-testing-library@^3.1.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.3.0.tgz#2044e067cad1588df6b06deaf01add98a9dbee74"
-  integrity sha512-on5xM8U+UszlUAmdHVzUnjNIRxM57Sv2k25YFjUcG+aUktYwQG2LJ0HTe8yBkL0Yyfi3iS9xpHRw0y87O+imbA==
+dom-testing-library@^3.8.1:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.8.2.tgz#14c728525466bf19f0368dc7186684fb2a91f610"
+  integrity sha512-B4qkyobFxmPxUggKyaLWu46AdjYBnQgnfKnJ6bLuwZP2qP7CZWU1SKDvsMMo9JfvUKk++hRgqhe3osy7FSLCBw==
   dependencies:
     mutationobserver-shim "^0.3.2"
-    pretty-format "^22.4.3"
-    wait-for-expect "^0.4.0"
+    pretty-format "^23.6.0"
+    wait-for-expect "^1.0.0"
 
 dom-walk@^0.1.0:
   version "0.1.1"
@@ -10778,14 +10778,6 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-pretty-format@^22.4.3:
-  version "22.4.3"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
-  integrity sha512-S4oT9/sT6MN7/3COoOy+ZJeA92VmOnveLHgrwBE3Z1W5N9S2A1QGNYiE1z75DAENbJrXXUb+OWXhpJcg05QKQQ==
-  dependencies:
-    ansi-regex "^3.0.0"
-    ansi-styles "^3.2.0"
-
 pretty-format@^23.6.0:
   version "23.6.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-23.6.0.tgz#5eaac8eeb6b33b987b7fe6097ea6a8a146ab5760"
@@ -11144,12 +11136,12 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-testing-library@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.0.1.tgz#b7bb205da19333477b6f92631286df98cad398b3"
-  integrity sha512-k1Mi30Qox9r3OjhxuU3FR4WPhnovYjXXLs+uRYG15kpmtzbiFcECN+WqP0k+rd2JnQJBqirGm41MinUXNi6QFA==
+react-testing-library@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.2.0.tgz#d7af9b0e6d1b653287d8c06cd0eab9e6d5d645ba"
+  integrity sha512-H0V3uM4dpxi/4Hy8nRwrT4i38hYLlyr5oIpUyzk6U1++NOP6XVYmuG8y8xoDsvxb8olN/iTLQzg2SWphR+uvyQ==
   dependencies:
-    dom-testing-library "^3.1.0"
+    dom-testing-library "^3.8.1"
     wait-for-expect "^1.0.0"
 
 react@^16.5.1:
@@ -13847,11 +13839,6 @@ w3c-hr-time@^1.0.1:
   integrity sha1-gqwr/2PZUOqeMYmlimViX+3xkEU=
   dependencies:
     browser-process-hrtime "^0.1.2"
-
-wait-for-expect@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-0.4.0.tgz#341c96ab89d6102a0169a9be6cd0de354de92c17"
-  integrity sha512-itHoJUKL5P8abjhWRlp3F5QLDY7LokcJkgD78tjrX08ozBakfy9YD4bgxUVuSld8yqjza3ld6Sj7UMMOH/twFA==
 
 wait-for-expect@^1.0.0:
   version "1.0.0"
