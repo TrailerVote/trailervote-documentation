@@ -24,13 +24,15 @@ If you want to write the ingestion yourself, we recommend you to use one of our 
 
 The current packages available are:
 
-| language | install | links |
-|----------|---------|-------|
-| Ruby | `gem install trailer_vote-api` | [GitHub](https://github.com/TrailerVote/trailer_vote-api) [Rubygems](https://rubygems.org/trailer_vote-api) |
-| JavaScript | `yarn install trailervote-api` | _work in progress_ |
+| language | package | latest | install |
+|----------|---------|--------|---------|
+| ruby | [trailer_vote-api](./ruby) | [![Gem Version](https://badge.fury.io/rb/trailer_vote-api.svg)](https://badge.fury.io/rb/trailer_vote-api) | `gem install trailer_vote-api` |
+| javascript | [@trailervote/api](./javascript) | [![NPM Package Version](https://badge.fury.io/js/@trailervote%2Fapi.svg)](https://npmjs.org/package/@trailervote/api) | `yarn add @trailervote/api` |
 
-Please contact us if you use a different language and/or framework, along with the versions of that language and/or framework.
+Please [contact us](mailto:info@trailervote.com) if you use a different language and/or framework, along with the versions of that language and/or framework.
 
 ## REST API
 
 If your language is not _yet_ available, but you would like to ingest data into our system, you can use the REST API. It is important to understand our [API design considerations](/api/reference), [headers](request-and-response-headers) and [media types](media-types). The [`Allow`](request-and-response-headers#allow) can always be used to determine which REST methods are allowed on a certain endpoint.
+
+> If you have chosen the preferred method, you are done reading.
