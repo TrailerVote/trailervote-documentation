@@ -3472,10 +3472,10 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
-create-emotion-server@^9.2.9:
-  version "9.2.9"
-  resolved "https://registry.yarnpkg.com/create-emotion-server/-/create-emotion-server-9.2.9.tgz#5217503de87a666ee79159c76d45967584d3df48"
-  integrity sha512-JEkAptZqkO27xaHoEH2x5WGxitVnfHexFae/hFM7crXuMWOBdmg4u/Uk6e32Ya5pTPf0zK5AXsiWKmiGY8LiuA==
+create-emotion-server@^9.2.12:
+  version "9.2.12"
+  resolved "https://registry.yarnpkg.com/create-emotion-server/-/create-emotion-server-9.2.12.tgz#30d82507bfe440bfb3dd6c9b5c8faf24597ee954"
+  integrity sha512-ET+E6A5MkQTEBNDYAnjh6+0cB33qStFXhtflkZNPEaOmvzYlB/xcPnpUk4J7ul3MVa8PCQx2Ei5g2MGY/y1n+g==
   dependencies:
     html-tokenize "^2.0.0"
     multipipe "^1.0.2"
@@ -4513,12 +4513,12 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
-emotion-server@^9.2.9:
-  version "9.2.9"
-  resolved "https://registry.yarnpkg.com/emotion-server/-/emotion-server-9.2.9.tgz#2a17d272982e59667e759ce470cff15c30adb0c6"
-  integrity sha512-Ff/f8NoyDKKVEIeYFXF14uAgNfCM5iSETMPqH1PPFGbkbNeWji7x1gMCIn+faAATq8z4y1VfzJy3dIY3e89SIw==
+emotion-server@^9.2.12:
+  version "9.2.12"
+  resolved "https://registry.yarnpkg.com/emotion-server/-/emotion-server-9.2.12.tgz#aaaaa04843108943d1ce5a796e0bc40b06a3223e"
+  integrity sha512-Bhjdl7eNoIeiAVa2QPP5d+1nP/31SiO/K1P/qI9cdXCydg91NwGYmteqhhge8u7PF8fLGTEVQfcPwj21815eBw==
   dependencies:
-    create-emotion-server "^9.2.9"
+    create-emotion-server "^9.2.12"
 
 emotion@^9.2.12:
   version "9.2.12"
@@ -11176,15 +11176,15 @@ react-testing-library@^5.0.1:
     dom-testing-library "^3.1.0"
     wait-for-expect "^1.0.0"
 
-react@^16.5.2:
-  version "16.5.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.5.2.tgz#19f6b444ed139baa45609eee6dc3d318b3895d42"
-  integrity sha512-FDCSVd3DjVTmbEAjUNX6FgfAmQ+ypJfHUsqUJOYNCBUp1h8lqmtC+0mXJ+JjsWx4KAVTkk1vKd1hLQPvEviSuw==
+react@^16.5.1:
+  version "16.5.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.5.1.tgz#8cb8e9f8cdcb4bde41c9a138bfbf907e66132372"
+  integrity sha512-E+23+rbpPsJgSX812LQkwupUCFnbVE84+L8uxlkqN5MU0DcraWMlVf9cRvKCKtGu0XvScyRnW7Z+9d7ymkjy3A==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    schedule "^0.5.0"
+    schedule "^0.4.0"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -11901,13 +11901,6 @@ schedule@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.4.0.tgz#fa20cfd0bfbf91c47d02272fd7096780d3170bbb"
   integrity sha512-hYjmoaEMojiMkWCxKr6ue+LYcZ29u29+AamWYmzwT2VOO9ws5UJp/wNhsVUPiUeNh+EdRfZm7nDeB40ffTfMhA==
-  dependencies:
-    object-assign "^4.1.1"
-
-schedule@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.5.0.tgz#c128fffa0b402488b08b55ae74bb9df55cc29cc8"
-  integrity sha512-HUcJicG5Ou8xfR//c2rPT0lPIRR09vVvN81T9fqfVgBmhERUbDEQoYKjpBxbueJnCPpSu2ujXzOnRQt6x9o/jw==
   dependencies:
     object-assign "^4.1.1"
 
