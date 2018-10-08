@@ -1,8 +1,8 @@
 import { css } from 'emotion'
-import facepaint from 'facepaint'
+// import facepaint from 'facepaint'
 
-const breakpoints = [1024]
-const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
+// const breakpoints = [1024]
+// const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export default css`
   flex-direction: column;
