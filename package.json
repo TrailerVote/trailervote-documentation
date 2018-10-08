@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@react-website-themes/classy-docs": "^0.0.20",
-    "emotion": "^9.2.9",
+    "emotion": "^9.2.12",
     "emotion-server": "^9.2.9",
     "facepaint": "^1.2.1",
     "gatsby": "2.0.0",
