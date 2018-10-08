@@ -11115,12 +11115,12 @@ react-dom@^16.5.1:
     prop-types "^15.6.2"
     schedule "^0.4.0"
 
-react-emotion@^9.2.9:
-  version "9.2.9"
-  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.9.tgz#fe4eaa801a1c87a371dfd8ecab52ee4e8bf75b07"
-  integrity sha512-Y659k6/Ow1KAs975Sy/wv8U7vvjgcgpeQi98+RuxsKNsfmSgzTNOMKT9hwR9QFBz9k+sOqAeAmwgc08PZeN4KQ==
+react-emotion@^9.2.12:
+  version "9.2.12"
+  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.12.tgz#74d1494f89e22d0b9442e92a33ca052461955c83"
+  integrity sha512-qt7XbxnEKX5sZ73rERJ92JMbEOoyOwG3BuCRFRkXrsJhEe+rFBRTljRw7yOLHZUCQC4GBObZhjXIduQ8S0ZpYw==
   dependencies:
-    babel-plugin-emotion "^9.2.9"
+    babel-plugin-emotion "^9.2.11"
     create-emotion-styled "^9.2.8"
 
 react-error-overlay@^3.0.0:
