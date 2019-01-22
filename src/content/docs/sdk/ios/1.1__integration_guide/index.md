@@ -27,7 +27,9 @@ Integration steps:
 2. Enabling and configuring the **TrailerVote In-Theatre feature**
 3. Enabling the **TrailerVote Bookmarklet iconlet**
 4. Presenting the **TrailerVote Video Player**
-5. Enabling the **Analytics** and **Remote notifications** capabilities
+5. Integrating the **Movies carousel view**
+6. Integrating the **Voted movies feed view**
+7. Enabling the **Analytics** and **Remote notifications** capabilities
 
 ## Configuring and initializing the TrailerVote SDK
 
@@ -150,6 +152,40 @@ TVTrailerVoteFactory.shared().videoPlayerViewController()
 ```
 
 method. The video player will automatically manage the playback queue.
+
+## Integrating the **Movies carousel view**
+
+<img src="img_movies_carousel.png" width="300" />
+
+The SDK provies the ready for use movies carousel view that can be easily integrated into your UI by using the
+
+```
+//objective-c
+[[TVTrailerVoteFactory sharedFactory] productCarouselViewControllerEmbeddedInParentViewController:parentView:]
+
+//swift
+TVTrailerVoteFactory.shared().productCarouselViewControllerEmbedded(inParentViewController:parentView:)
+```
+
+method. The view incapsules the necessary logic for fetching the movies list, presenting the data for each movie as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
+
+## Integrating the **Voted movies feed view**
+
+<img src="img_voted_movies_feed.png" width="300" />
+
+The SDK also provides the voted movies feed view for presenting the list of movies the user has previously voted on. To embed the view into your UI, call the
+
+```
+//objective-c
+[[TVTrailerVoteFactory sharedFactory] votedTrailersFeedViewControllerEmbeddedInParentViewController:parentView:]
+
+//swift
+TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(inParentViewController:parentView:)
+```
+
+<img src="img_voted_movies_feed_filter.png" width="300" />
+
+method. The view incapsulates the necessary logic for fetching the voted movies list, provides the capability of filtering the movies by the vote type (all, positive, neutral or negative), as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
 
 ## Enabling the **Analytics** and **Remote notifications** capabilities.
 
