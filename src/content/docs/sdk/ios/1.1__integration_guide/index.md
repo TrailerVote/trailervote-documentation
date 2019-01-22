@@ -65,7 +65,7 @@ method. Once the data is downloaded, the trailer recognition feature will be ava
 
 The main feature of the SDK is the movie trailers recognition. We use the `TVAudioRecognitionViewController` class for presenting a full-screen user interface and for handling the recognition processes.
 
-<img src="img_recognition_screen.png" width="300" />
+<img src="img_recognition_screen.png" width="250" />
 
 Instantiate the view controller by calling the `[TVTrailerVoteFactory audioRecognitionViewController]` method of the main factory class:
 
@@ -89,7 +89,7 @@ present(audioRecognitionVC, animated: true, completion: nil)
 
 When the movie trailer is recognized, the voting buttons are shown with the prompt for the user to vote.
 
-<img src="img_recognition_screen_voting.png" width="300" />
+<img src="img_recognition_screen_voting.png" width="250" />
 
 After the user votes, the feedback is recorded internally in the SDK and transmitted to TrailerVote. This means that this information is visible in the voted trailers feed and any API that exposes the vote.
 
@@ -133,11 +133,11 @@ To get the information on whether or not the user has previously voted on the gi
 TVTrailerVoteFactory.shared().voteDataProvider().getVoteForAudioFragmentURL(_:completion:)
 ```
 
-<img src="img_bookmarked_icon.png" width="300" />
+<img src="img_bookmarked_icon.png" width="400" />
 
 ## Presenting the TrailerVote Video Player
 
-<img src="img_video_player.png" width="300" />
+<img src="img_video_player.png" width="500" />
 
 Because moviegoers watch trailers in your movie app, we recommend replacing your video player with the **TrailerVote Video Player**. The TrailerVote Video Player will provide a prompt for voting during the video playback. 
 
@@ -155,7 +155,7 @@ method. The video player will automatically manage the playback queue.
 
 ## Integrating the **Movies carousel view**
 
-<img src="img_movies_carousel.png" width="300" />
+<img src="img_movies_carousel.png" width="500" />
 
 The SDK provies the ready for use movies carousel view that can be easily integrated into your UI by using the
 
@@ -171,7 +171,7 @@ method. The view incapsules the necessary logic for fetching the movies list, pr
 
 ## Integrating the **Voted movies feed view**
 
-<img src="img_voted_movies_feed.png" width="300" />
+<img src="img_voted_movies_feed.png" width="500" />
 
 The SDK also provides the voted movies feed view for presenting the list of movies the user has previously voted on. To embed the view into your UI, call the
 
@@ -183,7 +183,7 @@ The SDK also provides the voted movies feed view for presenting the list of movi
 TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(inParentViewController:parentView:)
 ```
 
-<img src="img_voted_movies_feed_filter.png" width="300" />
+<img src="img_voted_movies_feed_filter.png" width="500" />
 
 method. The view incapsulates the necessary logic for fetching the voted movies list, provides the capability of filtering the movies by the vote type (all, positive, neutral or negative), as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
 
