@@ -9,9 +9,8 @@ The TrailerVote SDK contains a main class ([`TrailerVoteSdk`](/android)) which c
 
 1. Configuring and initializing the **TrailerVote SDK**
 2. Enabling the **TrailerVote In-Theatre feature**
-3. Enabling the **TrailerVote Bookmarklet iconlet**
-4. Enabling the **TrailerVote Video Player**
-5. Adding **TrailerVote analytics** to key events
+3. Enabling the **TrailerVote Video Player**
+4. Adding **TrailerVote analytics** to key events
 
 ## Configuring and initializing the TrailerVote SDK
 
@@ -45,18 +44,6 @@ Note that after a trailer is recognized the SDK will render the voting buttons a
 After a user votes, the feedback is recorded internally in the SDK and transmitted to TrailerVote. This means that this information is visible in the voted trailers feed and any API that exposes the vote.
 
 *Note: Special advertisement clips are handled differently - the fullscreen `WebView` is presented with the corresponding url being loaded.*
-
-## Enabling the TrailerVote Bookmarket iconlet
-
-Once a user has voted that they wish to see a movie, it’s important that intent is shown on the movie listings within the app. It’s also important that the movies that are bookmarked via TrailerVote are prioritized to the top of any screens showing movies available for watching.
-
-To get the information on whether or not the user has previously voted on the given movie:
-
-```java
-boolean hasVoted = TrailerVoteSdk.hasVotedOnMovieWithId(someMovieId);
-```
-
-<img src="img_bookmarked_icon.png" width="300" />
 
 ## Enabling the TrailerVote Video Player
 

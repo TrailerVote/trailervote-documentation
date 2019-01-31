@@ -25,11 +25,10 @@ Integration steps:
 
 1. Configuring and initializing the **TrailerVote SDK**
 2. Enabling and configuring the **TrailerVote In-Theatre feature**
-3. Enabling the **TrailerVote Bookmarklet iconlet**
-4. Presenting the **TrailerVote Video Player**
-5. Integrating the **Movies carousel view**
-6. Integrating the **Voted movies feed view**
-7. Enabling the **Analytics** and **Remote notifications** capabilities
+3. Presenting the **TrailerVote Video Player**
+4. Integrating the **Movies carousel view**
+5. Integrating the **Voted movies feed view**
+6. Enabling the **Analytics** and **Remote notifications** capabilities
 
 ## Configuring and initializing the TrailerVote SDK
 
@@ -118,22 +117,6 @@ TVTrailerVoteFactory.shared().setDefaultVotingCardBackgroundImage(_:)
 ```
 
 method providing your own background image to use.
-
-## Enabling the TrailerVote Bookmarket iconlet
-
-Once a user has voted that they wish to see a movie, it’s important that intent is shown on the movie listings within the app. It’s also important that the movies that are bookmarked via TrailerVote are prioritized to the top of any screens showing movies available for watching.
-
-To get the information on whether or not the user has previously voted on the given movie:
-
-```
-//objective-c
-[[[TVTrailerVoteFactory sharedFactory] voteDataProvider] getVoteForAudioFragmentURL:completion:];
-
-//swift
-TVTrailerVoteFactory.shared().voteDataProvider().getVoteForAudioFragmentURL(_:completion:)
-```
-
-<img src="img_bookmarked_icon.png" width="400" />
 
 ## Presenting the TrailerVote Video Player
 
