@@ -170,7 +170,7 @@ TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(inParentVi
 
 method. The view incapsulates the necessary logic for fetching the voted movies list, provides the capability of filtering the movies by the vote type (all, positive, neutral or negative), as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
 
-## Enabling the Analyticsand Remote notifications capabilities.
+## Enabling the Analytics and Remote notifications capabilities.
 
 Both the analytics and the remote notifications capabilities require the client token to be provided to the SDK. To begin the setup, provide your token by calling the
 
