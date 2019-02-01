@@ -136,7 +136,7 @@ TVTrailerVoteFactory.shared().videoPlayerViewController()
 
 method. The video player will automatically manage the playback queue.
 
-## Integrating the **Movies carousel view**
+## Integrating the Movies carousel view
 
 <img src="img_movies_carousel.png" width="500" />
 
@@ -152,7 +152,7 @@ TVTrailerVoteFactory.shared().productCarouselViewControllerEmbedded(inParentView
 
 method. The view incapsules the necessary logic for fetching the movies list, presenting the data for each movie as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
 
-## Integrating the **Voted movies feed view**
+## Integrating the Voted movies feed view
 
 <img src="img_voted_movies_feed.png" width="500" />
 
@@ -170,7 +170,7 @@ TVTrailerVoteFactory.shared().votedTrailersFeedViewControllerEmbedded(inParentVi
 
 method. The view incapsulates the necessary logic for fetching the voted movies list, provides the capability of filtering the movies by the vote type (all, positive, neutral or negative), as well as launching the **TrailerVote Video Player** upon the selection of the particular item in the feed.
 
-## Enabling the **Analytics** and **Remote notifications** capabilities.
+## Enabling the Analyticsand Remote notifications capabilities.
 
 Both the analytics and the remote notifications capabilities require the client token to be provided to the SDK. To begin the setup, provide your token by calling the
 
