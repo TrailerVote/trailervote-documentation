@@ -351,3 +351,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVRemoteNotificationsDele
 ```
 
 In some time later, when you wish to stop the remote notifications capability, call the `[[TVTrailerVoteFactory sharedFactory] disablePushNotifications]`/`TVTrailerVoteFactory.shared().disablePushNotifications()` method to remove the current device ID from the notifications recipients list.
+
+To track analytics events, the SDK provides several methods:
+- `- (void)logShowtimesPageShownEventWithIdentifier:(nonnull NSString *)movieIdentifier;`
+- `(void)logTicketPurchasedEventWithIdentifier:(nonnull NSString *)movieIdentifier quantity:(NSUInteger)quantity value:(double)totalPrice fees:(double)convenienceFees currency:(nonnull NSString *)currencyCode;`
+
+Call these methods in corresponding places in your app to submit the corresponding events.
