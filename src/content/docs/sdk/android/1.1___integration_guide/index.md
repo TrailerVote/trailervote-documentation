@@ -55,10 +55,10 @@ Because moviegoers watch trailers in your movie app, we recommend replacing your
 To launch the video player, call the
 
 ```java
-TrailerVoteSdk.instance().openVideoPlayerWithMovieIDs(context, anArrayOfMovieIDs, initialIndex);
+TrailerVoteSdk.instance().openVideoPlayerForTrailer(context, trailerUrl, onErrorCallback);
 ```
 
-Given an array of movie ids, the video player will automatically manage the playback queue of trailers and by providing the initial index you can change the initial trailer to start playback with.
+The video player will automatically manage the playback queue and present the voting UI in order for user to vote on shown movies.
 
 ## Enabling the Analytics and the Remote Notifications capabilities.
 
