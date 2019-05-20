@@ -14,9 +14,9 @@ The TrailerVote SDK contains a main class ([`TrailerVoteSdk`](/android)) which c
 
 ## Configuring and initializing the TrailerVote SDK
 
-The initialization process of the SDK begins immediately at the first call of `TrailerVoteSdk.init(context, backendEndpoint, username, password);`. All internal dependencies are initialized as well as public singleton instances.
+The initialization process of the SDK begins immediately at the first call of `TrailerVoteSdk.init(context, authority, backendEndpoint, username, password);`. All internal dependencies are initialized as well as public singleton instances.
 
-To start the pre-loading process of the trailer recognition data, call the `TrailerVoteSdk.instance().load();` method.
+To start the pre-loading process of the trailer recognition data, call the `TrailerVoteSdk.instance().loadData();` method.
 
 Once the data is downloaded, the trailer recognition feature will be available in offline, but please keep the data pre-load call triggered on your app launch so that the SDK could update the recognition data.
 
@@ -43,8 +43,8 @@ After a user votes, the feedback is recorded internally in the SDK and transmitt
 
 *Note: Special advertisement clips are handled differently - the fullscreen `WebView` is presented with the corresponding url being loaded.*
 
-The SDK provides the ways to set the logo image displayed at the trailer recognition screen. To set the logo image, add the drawable with the name `img_recognition_screen_partner_logo`.
-You can override the default voting card background as well by adding the drawable with the name `img_recognition_screen_partner_background`.
+The SDK provides the ways to set the logo image displayed at the trailer recognition screen. To set the logo image, add the drawable with the name `img_tv_recognition_screen_partner_logo`.
+You can override the default voting card background as well by adding the drawable with the name `img_tv_recognition_screen_partner_background`.
 
 ## Enabling the TrailerVote Video Player
 
@@ -55,10 +55,10 @@ Because moviegoers watch trailers in your movie app, we recommend replacing your
 To launch the video player, call the
 
 ```java
-TrailerVoteSdk.instance().openVideoPlayerWithMovieIDs(context, anArrayOfMovieIDs, initialIndex);
+TrailerVoteSdk.instance().openVideoPlayerForTrailer(context, trailerUrl, runnableOnError);
 ```
 
-Given an array of movie ids, the video player will automatically manage the playback queue of trailers and by providing the initial index you can change the initial trailer to start playback with.
+The video player will automatically manage the playback queue and present the voting UI in order for user to vote on shown movies.
 
 ## Enabling the Analytics and the Remote Notifications capabilities.
 
@@ -115,7 +115,7 @@ In some time later, when you wish to stop the remote notifications capability, c
 
 To track analytics events, the SDK provides several methods:
 
-- `TrailerVoteSdk.instance().logTicketPurchasedEvent(movieId, quantity, totalPrice, convenienceFees, currencyCode);`
+- `TrailerVoteSdk.instance().logTicketPurchasedEvent(movieId, showtimeTimestamp, quantity, totalPrice, convenienceFees, currencyCode);`
 - `TrailerVoteSdk.instance().logShowtimesPageShownEvent(movieId);`
 
 Call these methods in corresponding places in your app to submit the corresponding events.
