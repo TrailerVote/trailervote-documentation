@@ -14,6 +14,7 @@ Simply call the `[TVTrailerVoteFactory sharedFactory]`/`TVTrailerVoteFactory.sha
 Integration steps:
 
 1. Configuring and initializing the **TrailerVote SDK**
+2. Setting the data pre-load mode.
 2. Enabling and configuring the **TrailerVote In-Theatre feature**
 3. Presenting the **TrailerVote Video Player**
 4. Integrating the **Movies carousel view**
@@ -65,6 +66,31 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 Once the data is downloaded, the trailer recognition feature will be available in offline, but please keep the data pre-load call triggered on your app launch so that the SDK could update the recognition data.
+
+## Setting the data pre-load mode.
+
+The SDK provides several data pre-load modes to fit the client needs such as bad network conditions etc. The default mode loads all the data during the pre-load process. Two other available options are `TVPreloadModeNoImagesPreload` that skips pre-downloading the movie images until a particular image is needed for showing up in the voting card and `TVPreloadModeNoImagesAtAll` that completely disable the image load.
+
+To set the pre-load mode, call the `TVTrailerVoteFactory.shared().setPreloadMode(<PRELOAD_MODE>)/[[TVTrailerVoteFactory sharedFactory] setPreloadMode:<PRELOAD_MODE>]` method after setting up the credentials for the SDK.
+
+```
+//objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [TVTrailerVoteFactory setupCredentialsWithUsername:@"YOUR_USERNAME"password:@"YOUR_PASSWORD"];
+    [[TVTrailerVoteFactory sharedFactory] setPreloadMode:TVPreloadModeNormal];
+    [[TVTrailerVoteFactory sharedFactory] launchDataPreload];
+    return YES;
+}
+
+//swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    TVTrailerVoteFactory.setupCredentials(withUsername:"YOUR_USERNAME" password:"YOUR_PASSWORD")
+    TVTrailerVoteFactory.shared().setPreloadMode(.normal)
+    TVTrailerVoteFactory.shared().launchDataPreload()
+    return true
+}
+```
 
 ## Enabling and configuring the TrailerVote In-Theatre feature
 
@@ -127,7 +153,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Because moviegoers watch trailers in your movie app, we recommend replacing your video player with the **TrailerVote Video Player**. The TrailerVote Video Player will provide a prompt for voting during the video playback. 
 
-To get the video player instance, call the `[[TVTrailerVoteFactory sharedFactory] videoPlayerViewController]`/`TVTrailerVoteFactory.shared().videoPlayerViewController()` method. The video player will automatically manage the playback queue and present the voting UI in order for user to vote on shown movies.
+To get the video player instance, call the `[[TVTrailerVoteFactory sharedFactory] presentVideoPlayerViewController:movieTrailerURL:]`/`TVTrailerVoteFactory.shared().presentVideoPlayerViewController(_:movieTrailerURL:)` method.
 
 ```
 //objective-c
@@ -137,14 +163,14 @@ To get the video player instance, call the `[[TVTrailerVoteFactory sharedFactory
 @implementation ViewController
 - (void)launchVideoPlayer
 {
-    [self presentViewController:[[TVTrailerVoteFactory sharedFactory] videoPlayerViewController] animated:YES];
+    [[TVTrailerVoteFactory sharedFactory] presentVideoPlayerViewController:self movieTrailerURL:<TRAILER_URL>];
 }
 @end
 
 //swift
 class ViewController: UIViewController {
     func launchVideoPlayer() {
-        self.present(TVTrailerVoteFactory.shared().videoPlayerViewController(), animated: true)
+        TVTrailerVoteFactory.shared().presentVideoPlayerViewController(self, movieTrailerURL:<TRAILER_URL>)
     }
 }
 ```
@@ -243,6 +269,29 @@ Both the analytics and the remote notifications capabilities require the client 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     TVTrailerVoteFactory.setupCredentials(withUsername:"YOUR_USERNAME" password:"YOUR_PASSWORD")
     TVTrailerVoteFactory.setupAnalyticsToken("YOUR_ANALYTICS_TOKEN")
+    TVTrailerVoteFactory.shared().launchDataPreload()
+    return true
+}
+```
+
+Some analytics events require the SDK to know the current launch method for the app (organic, via a remote notification, deeplink etc). In order for the SDK to be able to do that, call the `[TVTrailerVoteFactory application:didFinishLaunchingWithOptions:]/TVTrailerVoteFactory.application(_:didFinishLaunchingWithOptions:)` method after setting the analytics token.
+
+```
+//objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [TVTrailerVoteFactory setupCredentialsWithUsername:@"YOUR_USERNAME"password:@"YOUR_PASSWORD"];
+    [TVTrailerVoteFactory setupAnalyticsToken:@"YOUR_ANALYTICS_TOKEN"];
+    [TVTrailerVoteFactory application:application didFinishLaunchingWithOptions:launchOptions];
+    [[TVTrailerVoteFactory sharedFactory] launchDataPreload];
+    return YES;
+}
+
+//swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    TVTrailerVoteFactory.setupCredentials(withUsername:"YOUR_USERNAME" password:"YOUR_PASSWORD")
+    TVTrailerVoteFactory.setupAnalyticsToken("YOUR_ANALYTICS_TOKEN")
+    TVTrailerVoteFactory.application(application, didFinishLaunchingWithOptions: launchOptions)
     TVTrailerVoteFactory.shared().launchDataPreload()
     return true
 }
@@ -354,6 +403,6 @@ In some time later, when you wish to stop the remote notifications capability, c
 
 To track analytics events, the SDK provides several methods:
 - `- (void)logShowtimesPageShownEventWithIdentifier:(nonnull NSString *)movieIdentifier;`
-- `(void)logTicketPurchasedEventWithIdentifier:(nonnull NSString *)movieIdentifier quantity:(NSUInteger)quantity value:(double)totalPrice fees:(double)convenienceFees currency:(nonnull NSString *)currencyCode;`
+- `- (void)logTicketPurchasedEventWithMovieID:(nonnull NSString *)movieID showtimeDate:(nonnull NSDate *)showtimeDate ticketCount:(NSUInteger)ticketCount totalPrice:(double)totalPrice;`
 
 Call these methods in corresponding places in your app to submit the corresponding events.
