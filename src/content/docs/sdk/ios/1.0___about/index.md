@@ -25,13 +25,27 @@ TrailerVote SDK for iOS requires:
 
 # Getting Started
 
-## Installation
+## Installation using CococaPods dependency
 
-1. Download & unzip the latest iOS SDK from https://trailervote.com/downloads/ios-sdk.
-2. Drag **TrailerVoteSDK.framework** into your Xcode project tree:  
-<img src="img_framework_in_project_tree.png" width="300" />
-4. In your app **Target Settings** -> **General** tab, under the Embedded Binaries section, click the **+** button and select the imported **TrailerVoteSDK.framework** item. Click the **Add** button.  
-<img src="img_framework_embedding.png" width="300" />
+In your `Podfile` specify the `TrailerVoteSDK` pod to be used for your app target:
+
+```
+platform :ios, '10.0'
+
+use_frameworks!
+
+target 'YourAppName' do
+    pod 'TrailerVoteSDK'
+end
+```
+
+Run the following command to install the dependency:
+
+```
+pod install --repo-update
+```
+
+To update the SDK version to a new one, run the `pod repo update && pod update TrailerVoteSDK` command.
 
 ## Further steps
 
