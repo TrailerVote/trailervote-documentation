@@ -8,11 +8,11 @@ matrix:
 addons:
   apt:
     packages:
-    - ssh-client
+    - rsync
     - sshpass
 
 deploy:
   provider: script
-  script: sshpass -e scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null public www-data@docs.stable.trailervote.com:/var/www/html 
+  script: sshpass -e rsync -rv -e 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' public/ www-data@docs.stable.trailervote.com:/var/www/html 
   on:
     branch: master
