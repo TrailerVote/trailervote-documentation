@@ -9,3 +9,7 @@ matrix:
       cache: yarn
       node_js: lts/*
 
+addons:
+  apt:
+    packages:
+      - libvips-dev
