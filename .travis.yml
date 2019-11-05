@@ -8,8 +8,7 @@ matrix:
     - language: node_js
       cache: yarn
       node_js: lts/*
-
-addons:
-  apt:
-    packages:
-      - libvips-dev
+    
+    - language: node_js
+      cache: yarn
+      node_js: 8
