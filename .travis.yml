@@ -3,12 +3,16 @@ matrix:
   include:
     - language: node_js
       cache: yarn
-      node_js: node
-
-    - language: node_js
-      cache: yarn
-      node_js: lts/*
-    
-    - language: node_js
-      cache: yarn
       node_js: 8
+
+addons:
+  apt:
+    packages:
+    - ssh-client
+    - sshpass
+
+deploy:
+  provider: script
+  script: sshpass -e scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null public www-data@docs.stable.trailervote.com:/var/www/html 
+  on:
+    branch: master
